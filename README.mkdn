@@ -1,0 +1,3 @@
+# Kalah
+
+Generate color schemes by CSS (computed styles)
