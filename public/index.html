@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap-theme.min.css" type="text/css">
+
+    <link rel="stylesheet" href="solarized_light.css" type="text/css">
+
+    <script type="application/javascript" src="jquery.js"></script>
+    <script type="application/javascript" src="underscore.js"></script>
+    <script type="application/javascript" src="application.js"></script>
+
+    <title>Kalah</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Kalah</h1>
+      </div>
+      <section id="iterm2">
+        <script class="template" type="text/x-underscore-template">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+          <dict>
+            <% _.each(ansiColors, function (color, idx) { %>
+            <key>Ansi <%= idx %> Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= color.blue %></real>
+              <key>Green Component</key>
+              <real><%= color.green %></real>
+              <key>Red Component</key>
+              <real><%= color.red %></real>
+            </dict>
+            <% }); %>
+            <key>Background Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= backgroundColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= backgroundColor.green %></real>
+              <key>Red Component</key>
+              <real><%= backgroundColor.red %></real>
+            </dict>
+            <key>Bold Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= boldColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= boldColor.green %></real>
+              <key>Red Component</key>
+              <real><%= boldColor.red %></real>
+            </dict>
+            <key>Cursor Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= cursorColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= cursorColor.green %></real>
+              <key>Red Component</key>
+              <real><%= cursorColor.red %></real>
+            </dict>
+            <key>Cursor Text Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= cursorTextColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= cursorTextColor.green %></real>
+              <key>Red Component</key>
+              <real><%= cursorTextColor.red %></real>
+            </dict>
+            <key>Foreground Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= foregroundColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= foregroundColor.green %></real>
+              <key>Red Component</key>
+              <real><%= foregroundColor.red %></real>
+            </dict>
+            <key>Selected Text Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= selectedTextColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= selectedTextColor.green %></real>
+              <key>Red Component</key>
+              <real><%= selectedTextColor.red %></real>
+            </dict>
+            <key>Selection Color</key>
+            <dict>
+              <key>Blue Component</key>
+              <real><%= selectionColor.blue %></real>
+              <key>Green Component</key>
+              <real><%= selectionColor.green %></real>
+              <key>Red Component</key>
+              <real><%= selectionColor.red %></real>
+            </dict>
+          </dict>
+        </plist>
+        </script>
+        <h1>iTerm 2</h1>
+        <section>
+          <h2>Preview</h2>
+          <pre>$ git --version
+<span class="fg-0">fg0</span>    <span class="fg-8">fg8</span>
+<span class="fg-1">fg1</span>    <span class="fg-9">fg9</span>
+<span class="fg-2">fg2</span>    <span class="fg-10">fg10</span>
+<span class="fg-3">fg3</span>    <span class="fg-11">fg11</span>
+<span class="fg-4">fg4</span>    <span class="fg-12">fg12</span>
+<span class="fg-5">fg5</span>    <span class="fg-13">fg13</span>
+<span class="fg-6">fg6</span>    <span class="fg-14">fg14</span>
+<span class="fg-7">fg7</span>    <span class="fg-15">fg15</span>
+<b class="bold">bold text</b>
+<span class="cursor">text on cursor</span>
+<span class="selection">selected text</span>
+$ exit</pre>
+        </section>
+        <section>
+          <h2>Generated preference</h2>
+          <textarea class="output form-control" rows="10"></textarea>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>
